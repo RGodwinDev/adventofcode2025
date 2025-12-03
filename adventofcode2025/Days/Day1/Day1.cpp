@@ -20,7 +20,7 @@ void Day1::run() {
 			result1++;
 		}
 	}
-	std::cout << "day1 results: " << result1 << " " << result2 << std::endl;
+	std::cout << "Day 1: " << result1 << " " << result2 << std::endl;
 }
 
 int Day1::turnleft(int start, int ticks) {

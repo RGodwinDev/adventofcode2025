@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <vector>
 
 class Day3 {
 private:
@@ -10,4 +11,5 @@ private:
 	unsigned __int64 result2 = 0;
 public:
 	void run();
+	unsigned __int64 getCharge(std::string &line, int numBatteries);
 };

@@ -31,21 +31,39 @@ int main()
 	auto d2finish = std::chrono::high_resolution_clock::now();
 	d3->run();
 	auto d3finish = std::chrono::high_resolution_clock::now();
-	/*
-	d4->run();
-	d5->run();
-	d6->run();
-	d7->run();
-	d8->run();
-	d9->run();
-	d10->run();
-	d11->run();
-	d12->run();
-	*/
+	//d4->run();
+	auto d4finish = std::chrono::high_resolution_clock::now();
+	//d5->run();
+	auto d5finish = std::chrono::high_resolution_clock::now();
+	//d6->run();
+	auto d6finish = std::chrono::high_resolution_clock::now();
+	//d7->run();
+	auto d7finish = std::chrono::high_resolution_clock::now();
+	//d8->run();
+	auto d8finish = std::chrono::high_resolution_clock::now();
+	//d9->run();
+	auto d9finish = std::chrono::high_resolution_clock::now();
+	//d10->run();
+	auto d10finish = std::chrono::high_resolution_clock::now();
+	//d11->run();
+	auto d11finish = std::chrono::high_resolution_clock::now();
+	//d12->run();
+	auto d12finish = std::chrono::high_resolution_clock::now();
+
 	std::cout << std::endl << std::endl;
 	std::cout << "RUNTIMES" << std::endl;
 	std::cout << "Day 1 took: " << std::chrono::duration_cast<std::chrono::microseconds>(d1finish - start) << std::endl;
 	std::cout << "Day 2 took: " << std::chrono::duration_cast<std::chrono::microseconds>(d2finish - d1finish) << std::endl;
 	std::cout << "Day 3 took: " << std::chrono::duration_cast<std::chrono::microseconds>(d3finish - d2finish) << std::endl;
+	//std::cout << "Day 4 took: " << std::chrono::duration_cast<std::chrono::microseconds>(d4finish - d3finish) << std::endl;
+	//std::cout << "Day 5 took: " << std::chrono::duration_cast<std::chrono::microseconds>(d5finish - d4finish) << std::endl;
+	//std::cout << "Day 6 took: " << std::chrono::duration_cast<std::chrono::microseconds>(d6finish - d5finish) << std::endl;
+	//std::cout << "Day 7 took: " << std::chrono::duration_cast<std::chrono::microseconds>(d7finish - d6finish) << std::endl;
+	//std::cout << "Day 8 took: " << std::chrono::duration_cast<std::chrono::microseconds>(d8finish - d7finish) << std::endl;
+	//std::cout << "Day 9 took: " << std::chrono::duration_cast<std::chrono::microseconds>(d9finish - d8finish) << std::endl;
+	//std::cout << "Day 10 took: " << std::chrono::duration_cast<std::chrono::microseconds>(d10finish - d9finish) << std::endl;
+	//std::cout << "Day 11 took: " << std::chrono::duration_cast<std::chrono::microseconds>(d11finish - d10finish) << std::endl;
+	//std::cout << "Day 12 took: " << std::chrono::duration_cast<std::chrono::microseconds>(d12finish - d11finish) << std::endl;
+	std::cout << "Total: " << std::chrono::duration_cast<std::chrono::microseconds>(d12finish - start) << std::endl;
 	return 0;
 }

@@ -7,7 +7,10 @@ void Day2::run() {
 
 	std::stringstream ss(text);
 	std::string range; 
+
+	//numbers we've already gotten. don't recount them.
 	std::unordered_set<unsigned __int64> numbers = std::unordered_set<unsigned __int64>();
+
 	while (std::getline(ss, range, ',')) {
 		unsigned __int64 s = range.find('-');
 		unsigned __int64 min = stoll(range.substr(0, (s)));

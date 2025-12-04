@@ -9,7 +9,7 @@ private:
 	std::string input = "./day3input.txt";
 	unsigned __int64 result1 = 0;
 	unsigned __int64 result2 = 0;
+	unsigned __int64 getCharge(std::string& line, int numBatteries);
 public:
 	void run();
-	unsigned __int64 getCharge(std::string &line, int numBatteries);
 };

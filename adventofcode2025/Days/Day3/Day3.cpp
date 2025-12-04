@@ -9,7 +9,7 @@ void Day3::run() {
 		result1 += getCharge(text, 2);
 		result2 += getCharge(text, 12);
 	};
-
+	file.close();
 	std::cout << "Day 3: " << result1 << " " << result2 << std::endl;
 }
 

@@ -28,11 +28,11 @@ void Day4::run() {
 	result1 = Part1(grid);
 	result2 = Part2(grid);
 	
-	/* VERSION 2
-	std::map<std::pair<int, int>, std::set<std::pair<int, int>>> graph;
-	result1 = Part1v2(grid, graph);
-	result2 = Part2v2(graph);
-	*/
+	//VERSION 2
+	//std::map<std::pair<int, int>, std::set<std::pair<int, int>>> graph;
+	//result1 = Part1v2(grid, graph);
+	//result2 = Part2v2(graph);
+	
 	std::cout << "Day 4: " << result1 << " " << result2 << std::endl;
 }
 

@@ -12,5 +12,6 @@ private:
 	unsigned __int64 result2 = 0;
 public:
 	void run();
-	unsigned __int64 calc(std::unordered_set<unsigned __int64>& numbers, unsigned __int64 min, unsigned __int64 max, int leftsize, int digitsmin, int digitsmax);
+	unsigned __int64 calc(std::unordered_set<unsigned __int64>& numbers, unsigned __int64 min, unsigned __int64 max);
+	unsigned __int64 calc2(std::unordered_set<unsigned __int64>& numbers, unsigned __int64 min, unsigned __int64 max);
 };

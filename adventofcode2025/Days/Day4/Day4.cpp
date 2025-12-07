@@ -23,7 +23,7 @@ void Day4::run() {
 		}
 		grid.push_back(line);
 	};
-	
+	file.close();
 	//VERSION 1
 	result1 = Part1(grid);
 	result2 = Part2(grid);

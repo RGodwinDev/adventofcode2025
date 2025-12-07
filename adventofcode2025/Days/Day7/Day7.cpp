@@ -1,7 +1,5 @@
 #include "./Day7.h"
 
-#include <numeric>
-
 void Day7::run() {
 
 	std::string text;

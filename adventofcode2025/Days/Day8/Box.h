@@ -1,6 +1,5 @@
 #pragma once
 #include <vector>
-#include <set>
 
 class Box {
 private:
@@ -8,7 +7,6 @@ private:
 	int y;
 	int z;
 
-	std::set<Box*> connections = std::set<Box*>();
 public:
 	Box(int x, int y, int z);
 

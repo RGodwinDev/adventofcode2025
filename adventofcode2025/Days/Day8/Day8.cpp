@@ -27,7 +27,7 @@ void Day8::run() {
 			//d(p,q) = sqrt( (p1 - q1)^2 + (p2 - q2)^2 + (p3 - q3)^2 )
 			//we could remove the square root, as the actual value of distance doesnt matter
 			//just that it's bigger/smaller compared to the others.
-			double d = pow(pow((box1position[0] - box2position[0]), 2) + pow((box1position[1] - box2position[1]), 2) + pow((box1position[2] - box2position[2]), 2), 0.5);
+			double d = std::hypot((box1position[0] - box2position[0]), box1position[1] - box2position[1], box1position[2] - box2position[2]);
 			distances.push_back({ d, {boxes[i], boxes[j]} });
 		}
 	}

@@ -17,6 +17,4 @@ public:
 	/// </summary>
 	/// <returns>Vector of positions, {x,y,z}</returns>
 	std::vector<int> getPosition();
-	
-	bool isConnected(Box* b);
 };

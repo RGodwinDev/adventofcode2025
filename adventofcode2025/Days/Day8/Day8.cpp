@@ -15,8 +15,13 @@ void Day8::run() {
 
 		boxes.push_back(new Box(x, y, z));
 	};
+	file.close();
 
-	std::vector<std::pair<double, std::pair<Box*, Box*>>> distances = {};
+	//min prio queue that contains:		pair<double, pair<box,box>>
+	std::priority_queue<std::pair<double, std::pair<Box*, Box*>>, 
+		std::vector<std::pair<double, std::pair<Box*, Box*>>>, 
+		std::greater<std::pair<double, std::pair<Box*, Box*>>>> distances;
+
 
 	for (int i = 0; i < boxes.size()-1; ++i) {
 		std::vector<int> box1position = boxes[i]->getPosition();
@@ -28,20 +33,22 @@ void Day8::run() {
 			//we could remove the square root, as the actual value of distance doesnt matter
 			//just that it's bigger/smaller compared to the others.
 			double d = std::hypot((box1position[0] - box2position[0]), box1position[1] - box2position[1], box1position[2] - box2position[2]);
-			distances.push_back({ d, {boxes[i], boxes[j]} });
+
+			distances.push({ d, {boxes[i], boxes[j]} });
 		}
 	}
 	
-	std::sort(distances.begin(), distances.end());
-	std::set<Circuit*> circuits = std::set<Circuit*>();
 	
-	for (int i = 0; i < 1000; ++i) {
+	std::set<Circuit*> circuits = std::set<Circuit*>();
+
+	int i = 0;
+	while (i < 1000) {
 		std::vector<Circuit*> a;
 		for (Circuit* c : circuits) {
-			if (c->containsBox(distances[i].second.first)) {
+			if (c->containsBox(distances.top().second.first)) {
 				a.push_back(c);
 			}
-			if (c->containsBox(distances[i].second.second)) {
+			if (c->containsBox(distances.top().second.second)) {
 				a.push_back(c);
 			}
 		}
@@ -51,8 +58,8 @@ void Day8::run() {
 				main->merge(a[i]);
 				circuits.erase(a[i]);
 			}
-			main->insertBox(distances[i].second.first);
-			main->insertBox(distances[i].second.second);
+			main->insertBox(distances.top().second.first);
+			main->insertBox(distances.top().second.second);
 
 			//main circuit might have been erased if both were in it.
 			circuits.insert(main);
@@ -60,10 +67,12 @@ void Day8::run() {
 		else {
 			//boxes werent in any circuit, create a new one.
 			Circuit* c = new Circuit();
-			c->insertBox(distances[i].second.first);
-			c->insertBox(distances[i].second.second);
+			c->insertBox(distances.top().second.first);
+			c->insertBox(distances.top().second.second);
 			circuits.insert(c);
 		}
+		i++;
+		distances.pop();
 	}
 	
 	int largest = 0;
@@ -92,25 +101,24 @@ void Day8::run() {
 	*		Keep connecting boxes until all the boxes are in a single circuit
 	*/
 
-	
-	int i = 1000; //continue from where we left off.
 	unsigned __int64 prevx1 = 0;
 	unsigned __int64 prevx2 = 0;
-
+	double lastdist = 0;
 	//while we have more than 1 circuit.
 	//there 'could' be boxes that still exist outside the circuit that have NO connection.
 	while (circuits.size() > 1 && i < distances.size()) {
-		prevx1 = distances[i].second.first->getPosition()[0];
-		prevx2 = distances[i].second.second->getPosition()[0];
+		prevx1 = distances.top().second.first->getPosition()[0];
+		prevx2 = distances.top().second.second->getPosition()[0];
+		lastdist = distances.top().first;
 		std::vector<Circuit*> a;
 		for (Circuit* c : circuits) {
 
 			//if a circuit contains either box, add it to the circuit vector.
-			if (c->containsBox(distances[i].second.first)) 
+			if (c->containsBox(distances.top().second.first))
 			{
 				a.push_back(c);
 			}
-			if (c->containsBox(distances[i].second.second)) 
+			if (c->containsBox(distances.top().second.second))
 			{
 				a.push_back(c);
 			}
@@ -124,8 +132,8 @@ void Day8::run() {
 				circuits.erase(a[i]);
 			}
 
-			main->insertBox(distances[i].second.first);
-			main->insertBox(distances[i].second.second);
+			main->insertBox(distances.top().second.first);
+			main->insertBox(distances.top().second.second);
 
 			//main circuit might have been erased if both were in it.
 			circuits.insert(main);
@@ -134,15 +142,15 @@ void Day8::run() {
 		{
 			//boxes werent in any circuit, create a new one.
 			Circuit* c = new Circuit();
-			c->insertBox(distances[i].second.first);
-			c->insertBox(distances[i].second.second);
+			c->insertBox(distances.top().second.first);
+			c->insertBox(distances.top().second.second);
 			circuits.insert(c);
 		}
 		i++;
+		distances.pop();
 	}
 
 	result2 = prevx1 * prevx2;
-
 
 
 	std::cout << "Day 8: " << result1 << " " << result2 << std::endl;

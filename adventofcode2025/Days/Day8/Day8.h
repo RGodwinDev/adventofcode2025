@@ -3,6 +3,8 @@
 #include <string>
 #include <fstream>
 #include <algorithm>
+#include <queue>
+#include <vector>
 #include "Box.h"
 #include "Circuit.h"
 

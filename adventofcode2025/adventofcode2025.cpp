@@ -32,7 +32,7 @@ int main()
 	auto start = std::chrono::high_resolution_clock::now();
 	d1->run(100, 50);
 	auto d1finish = std::chrono::high_resolution_clock::now();
-	//d2->run();
+	d2->run();
 	auto d2finish = std::chrono::high_resolution_clock::now();
 	d3->run();
 	auto d3finish = std::chrono::high_resolution_clock::now();
@@ -44,7 +44,7 @@ int main()
 	auto d6finish = std::chrono::high_resolution_clock::now();
 	d7->run();
 	auto d7finish = std::chrono::high_resolution_clock::now();
-	//d8->run();
+	d8->run();
 	auto d8finish = std::chrono::high_resolution_clock::now();
 	//d9->run();
 	auto d9finish = std::chrono::high_resolution_clock::now();

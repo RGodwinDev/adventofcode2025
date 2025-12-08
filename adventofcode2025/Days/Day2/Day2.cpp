@@ -22,10 +22,11 @@ void Day2::run() {
 
 		//result2 gets all numbers between min and max that has a repeating pattern
 		//e.g. 11 222 3333 121212 424242424242 7234572345 432432432
-		result2 += calc2(numbers, min, max);
+		//result2 += calc2(numbers, min, max);
 	}
 	std::cout << "Day 2: " << result1 << " " << result2 << std::endl;
 }
+
 unsigned __int64 Day2::calc(std::unordered_set<unsigned __int64>& numbers, unsigned __int64 min, unsigned __int64 max) {
 	unsigned __int64 SUM = 0;
 

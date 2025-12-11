@@ -17,7 +17,11 @@ add_executable (adventofcode2025
 	"Days/Day10/Day10.cpp" "Days/Day10/Day10.h"
 	"Days/Day11/Day11.cpp" "Days/Day11/Day11.h"
 	"Days/Day12/Day12.cpp" "Days/Day12/Day12.h"
-	 "Days/Day8/Box.cpp" "Days/Day8/Box.h" "Days/Day8/Circuit.cpp" "Days/Day8/Circuit.h")
+	 "Days/Day8/Box.cpp" "Days/Day8/Box.h" 
+	 "Days/Day8/Circuit.cpp" "Days/Day8/Circuit.h" 
+	 "Days/Day10/Joltage.cpp" "Days/Day10/Joltage.h" 
+	 "Days/Day10/Machine.h" "Days/Day10/Machine.cpp" 
+	 "Days/Day10/Button.h" "Days/Day10/Button.cpp")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET adventofcode2025 PROPERTY CXX_STANDARD 20)

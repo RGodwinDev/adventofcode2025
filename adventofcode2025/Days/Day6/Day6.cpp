@@ -43,6 +43,23 @@ void Day6::run() {
 
 	file.clear(); //clear any flags on the file.
 	file.seekg(0); //reset the fstream to the start of the file.
+
+	/*
+	*	PART 2
+	*	cephalopod math is actually written right-to-left in columns
+	* 
+	*	123
+	*	456
+	*	+
+	* 
+	*	is actually
+	*	36 + 25 + 14
+	* 
+	*	not 123 + 456
+	* 
+	*	redo the math, result2 is adding together the answers to all the problems.
+	*/
+
 	/*
 	std::vector<std::string> lines;
 	while (std::getline(file, text) && text[0] != '+' && text[0] != '*') {

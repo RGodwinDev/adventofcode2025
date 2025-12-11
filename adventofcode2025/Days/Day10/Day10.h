@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include "Machine.h"
+
 
 class Day10 {
 private:

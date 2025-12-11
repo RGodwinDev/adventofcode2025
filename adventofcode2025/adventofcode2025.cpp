@@ -48,7 +48,7 @@ int main()
 	auto d8finish = std::chrono::high_resolution_clock::now();
 	d9->run();
 	auto d9finish = std::chrono::high_resolution_clock::now();
-	//d10->run();
+	d10->run();
 	auto d10finish = std::chrono::high_resolution_clock::now();
 	//d11->run();
 	auto d11finish = std::chrono::high_resolution_clock::now();

@@ -13,15 +13,18 @@ add_executable (adventofcode2025
 	"Days/Day6/Day6.cpp" "Days/Day6/Day6.h"
 	"Days/Day7/Day7.cpp" "Days/Day7/Day7.h"
 	"Days/Day8/Day8.cpp" "Days/Day8/Day8.h"
+	"Days/Day8/Box.cpp" "Days/Day8/Box.h" 
+	"Days/Day8/Circuit.cpp" "Days/Day8/Circuit.h" 
 	"Days/Day9/Day9.cpp" "Days/Day9/Day9.h"
 	"Days/Day10/Day10.cpp" "Days/Day10/Day10.h"
+	"Days/Day10/Joltage.cpp" "Days/Day10/Joltage.h" 
+	"Days/Day10/Machine.h" "Days/Day10/Machine.cpp" 
+	"Days/Day10/Button.h" "Days/Day10/Button.cpp" 
 	"Days/Day11/Day11.cpp" "Days/Day11/Day11.h"
+	"Days/Day11/Node.h" "Days/Day11/Node.cpp" 
+	"Days/Day11/Path.cpp" "Days/Day11/Path.h" 
 	"Days/Day12/Day12.cpp" "Days/Day12/Day12.h"
-	 "Days/Day8/Box.cpp" "Days/Day8/Box.h" 
-	 "Days/Day8/Circuit.cpp" "Days/Day8/Circuit.h" 
-	 "Days/Day10/Joltage.cpp" "Days/Day10/Joltage.h" 
-	 "Days/Day10/Machine.h" "Days/Day10/Machine.cpp" 
-	 "Days/Day10/Button.h" "Days/Day10/Button.cpp")
+	"Days/Day12/Shape.cpp" "Days/Day12/Shape.h")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET adventofcode2025 PROPERTY CXX_STANDARD 20)

@@ -1,7 +1,7 @@
 #include "./Day10.h"
 
-void Day10::run() {
-
+void Day10::run() 
+{
 	std::string text;
 	std::fstream file(input);
 

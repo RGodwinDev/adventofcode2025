@@ -22,7 +22,7 @@ void Day2::run() {
 
 		//result2 gets all numbers between min and max that has a repeating pattern
 		//e.g. 11 222 3333 121212 424242424242 7234572345 432432432
-		//result2 += calc2(numbers, min, max);
+		result2 += calc2(numbers, min, max);
 	}
 	std::cout << "Day 2: " << result1 << " " << result2 << std::endl;
 }
@@ -95,7 +95,9 @@ unsigned __int64 Day2::calc(std::unordered_set<unsigned __int64>& numbers, unsig
 unsigned __int64 Day2::calc2(std::unordered_set<unsigned __int64> &numbers, unsigned __int64 min, unsigned __int64 max) {
 		unsigned __int64 sum = 0;
 		unsigned __int64 left = 0;
-		std::cout << "NEW RANGE" << std::endl;
+
+		
+		//std::cout << "NEW RANGE" << std::endl;
 		//get number of digits in min
 		int digitsmin = 0;
 		unsigned __int64 temp = min;
@@ -111,34 +113,34 @@ unsigned __int64 Day2::calc2(std::unordered_set<unsigned __int64> &numbers, unsi
 			digitsmax++;
 			temp /= 10;
 		}
-		std::cout << min << "-" << max << std::endl;
+		//std::cout << min << "-" << max << std::endl;
 		for (int i = digitsmin; i <= digitsmax; ++i) {
 			unsigned __int64 left = min / (unsigned __int64)pow(10, i / 2);
 			unsigned __int64 cur = left + (left * pow(10, i / 2));
 			unsigned __int64 nextdigits = pow(10, i);
-			std::cout << "left: " << left << std::endl;
-			std::cout << "cur: " << cur << std::endl;
+			//std::cout << "left: " << left << std::endl;
+			//std::cout << "cur: " << cur << std::endl;
 			//number generated was LESS than the minimum.
 			while (cur < min) {
 				//example: 100485 -> 100100
 				//101101 will be over, just increasing left by 1 ONCE 'should' be enough.
 				left++;
 				cur = left + (left * pow(10, i / 2));
-				std::cout << "cur too low, +1" << std::endl;
+				//std::cout << "cur too low, +1" << std::endl;
 			}
-			std::cout << "cur: " << cur << std::endl;
+			//std::cout << "cur: " << cur << std::endl;
 			//generate numbers until we reach max or grow digits.
 			while (cur <= max && cur < nextdigits) {
 				sum += cur;
-				std::cout << cur << " added to sum" << std::endl;
+				//std::cout << cur << " added to sum" << std::endl;
 				left++;
 				cur = left + (left * pow(10, i / 2));
-				std::cout << "cur: " << cur << std::endl;
+				//std::cout << "cur: " << cur << std::endl;
 			}
-			std::cout << i << std::endl;
+			//std::cout << i << std::endl;
 		}
 
-		std::cout << "sum so far: " << sum << std::endl;
+		//std::cout << "sum so far: " << sum << std::endl;
 
 		//std::cout << "left digits: " << leftsize << std::endl;
 		//assume %leftsize == 0 with a number between min and max.

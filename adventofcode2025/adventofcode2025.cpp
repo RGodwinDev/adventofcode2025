@@ -50,9 +50,9 @@ int main()
 	auto d9finish = std::chrono::high_resolution_clock::now();
 	d10->run();
 	auto d10finish = std::chrono::high_resolution_clock::now();
-	//d11->run();
+	d11->run();
 	auto d11finish = std::chrono::high_resolution_clock::now();
-	//d12->run();
+	d12->run();
 	auto d12finish = std::chrono::high_resolution_clock::now();
 
 	std::cout << std::endl << std::endl;

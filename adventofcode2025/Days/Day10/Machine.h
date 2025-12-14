@@ -4,9 +4,9 @@
 #include <string>
 #include <map>
 #include <set>
-#include <iostream>
-#include <bitset>
-class Machine {
+
+class Machine 
+{
 private:
 	Joltage j;
 	std::vector<Button*> Buttons;

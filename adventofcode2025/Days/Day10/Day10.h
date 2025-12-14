@@ -5,7 +5,8 @@
 #include "Machine.h"
 
 
-class Day10 {
+class Day10 
+{
 private:
 	std::string input = "./day10input.txt";
 	long result1 = 0;
